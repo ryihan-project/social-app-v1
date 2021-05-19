@@ -48,3 +48,5 @@ import static com.xscoder.askk.XServerSDK.USERS_TABLE_NAME;
 import static com.xscoder.askk.XServerSDK.popBold;
 import static com.xscoder.askk.XServerSDK.popRegular;
 import static com.xscoder.askk.XServerSDK.roundLargeNumber;
+public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+}// ./ end
