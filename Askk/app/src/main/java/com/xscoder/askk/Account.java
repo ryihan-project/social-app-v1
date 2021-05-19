@@ -34,6 +34,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import de.hdodenhof.circleimageview.CircleImageView;
+import eu.amirs.JSON;
 import static com.xscoder.askk.XServerSDK.ANSWERS_QUESTION_POINTER;
 import static com.xscoder.askk.XServerSDK.ANSWERS_REPORTED_BY;
 import static com.xscoder.askk.XServerSDK.ANSWERS_TABLE_NAME;
