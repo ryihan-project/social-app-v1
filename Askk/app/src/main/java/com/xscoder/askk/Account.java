@@ -49,6 +49,52 @@ import static com.xscoder.askk.XServerSDK.popBold;
 import static com.xscoder.askk.XServerSDK.popRegular;
 import static com.xscoder.askk.XServerSDK.roundLargeNumber;
 public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+      //-----------------------------------------------
+      // MARK - TAP CELL -> SEE QUESTIONS OR ANSWERS
+      //-----------------------------------------------
+      QAListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+            if (isQuestions) {
+               // Obj
+               JSON qObj = QAArray.get(position);
+
+               Intent i = new Intent(ctx, QuestionScreen.class);
+               Bundle extras = new Bundle();
+               extras.putString("object", String.valueOf(qObj));
+               i.putExtras(extras);
+               startActivity(i);
+
+            } else {
+               // Obj
+               JSON aObj = QAArray.get(position);
+
+               // Get Pointer
+               XSGetPointer((Activity)ctx, aObj.key(ANSWERS_QUESTION_POINTER).stringValue(), QUESTIONS_TABLE_NAME, new XServerSDK.XSPointerHandler() {
+                  @Override public void done(final JSON questionPointer, String e) {
+                     if (questionPointer != null) {
+
+                        Intent i = new Intent(ctx, QuestionScreen.class);
+                        Bundle extras = new Bundle();
+                        extras.putString("object", String.valueOf(questionPointer));
+                        i.putExtras(extras);
+                        startActivity(i);
+
+                     // error
+                     } else { simpleAlert(e, ctx);
+               }}}); // ./ XSGetPointer
+
+            }// :/ If
+
+      }});
+   }
+
+
+
+
+
+
+
    //-----------------------------------------------
    // MARK - REFRESH DATA
    //-----------------------------------------------
