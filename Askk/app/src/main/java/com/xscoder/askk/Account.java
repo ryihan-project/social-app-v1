@@ -49,4 +49,14 @@ import static com.xscoder.askk.XServerSDK.popBold;
 import static com.xscoder.askk.XServerSDK.popRegular;
 import static com.xscoder.askk.XServerSDK.roundLargeNumber;
 public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+   //-----------------------------------------------
+   // MARK - REFRESH DATA
+   //-----------------------------------------------
+   @Override
+   public void onRefresh() {
+      callQuery();
+      if (refreshControl.isRefreshing()) { refreshControl.setRefreshing(false); }
+   }
+
+
 }// ./ end
