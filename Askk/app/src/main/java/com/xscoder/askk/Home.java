@@ -61,6 +61,12 @@ public class Home extends AppCompatActivity {
         questionsListView = findViewById(R.id.hQuestionsListView);
         postQuestionButton = findViewById(R.id.hPostQuestionButton);
 
+
+        //-----------------------------------------------
+        // MARK - TAB BAR BUTTONS
+        //-----------------------------------------------
+        Button tab1 = findViewById(R.id.tab2);
+        Button tab2 = findViewById(R.id.tab3);
         //-----------------------------------------------
         // MARK - SEARCH BY KEYWORDS
         //-----------------------------------------------
