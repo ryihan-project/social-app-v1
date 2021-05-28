@@ -61,6 +61,9 @@ public class Home extends AppCompatActivity {
         questionsListView = findViewById(R.id.hQuestionsListView);
         postQuestionButton = findViewById(R.id.hPostQuestionButton);
 
+        // Default Category
+        categoryTxt.setText(categoriesArray[0].toUpperCase());
+
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
