@@ -89,6 +89,17 @@ public class Home extends AppCompatActivity {
                             public void done(String e, JSON obj) {
                                 if (e == null) { Log.i(TAG, "DEVICE TOKEN REGISTERED");
                         }}});
+
+        // Check Permissions
+        if (!checkPermissions()) { checkPermissions(); }
+
+    }
+
+
+
+
+
+
         //-----------------------------------------------
         // MARK - INITIALIZE VIEWS
         //-----------------------------------------------
