@@ -44,6 +44,11 @@ import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import eu.amirs.JSON;
+import static com.xscoder.askk.XServerSDK.ANDROID_DEVICE_TOKEN;
+import static com.xscoder.askk.XServerSDK.GRAY;
+import static com.xscoder.askk.XServerSDK.MAIN_COLOR;
+import static com.xscoder.askk.XServerSDK.MULTIPLE_PERMISSIONS;
+import static com.xscoder.askk.XServerSDK.QUESTIONS_ANSWERS;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_CREATED_AT;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_IS_ANONYMOUS;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_QUESTION;
@@ -61,6 +66,29 @@ public class Home extends AppCompatActivity {
     String selectedCategory = categoriesArray[0];
     String searchTxt = "";
 
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.i(TAG, "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        ANDROID_DEVICE_TOKEN = Objects.requireNonNull(task.getResult()).getToken();
+                        Log.i(TAG, "DEVICE TOKEN: " + ANDROID_DEVICE_TOKEN);
+
+                        // Register the device Token - for Push Notifications
+                        RequestParams params = new RequestParams();
+                        params.put("tableName", "Users");
+                        params.put("ID_id", currentUser.key("ID_id").stringValue());
+                        params.put("ST_androidDeviceToken", ANDROID_DEVICE_TOKEN);
+                        // Reset app icon badge to 0
+                        params.put("NU_badge", "0");
+                        XSObject((Activity) ctx, params, new XServerSDK.XSObjectHandler() {
+                            @Override
+                            public void done(String e, JSON obj) {
+                                if (e == null) { Log.i(TAG, "DEVICE TOKEN REGISTERED");
+                        }}});
         //-----------------------------------------------
         // MARK - INITIALIZE VIEWS
         //-----------------------------------------------
