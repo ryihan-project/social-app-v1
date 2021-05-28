@@ -53,6 +53,12 @@ import static com.xscoder.askk.XServerSDK.QUESTIONS_CREATED_AT;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_IS_ANONYMOUS;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_QUESTION;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_REPORTED_BY;
+import static com.xscoder.askk.XServerSDK.TAG;
+import static com.xscoder.askk.XServerSDK.USERS_AVATAR;
+import static com.xscoder.askk.XServerSDK.USERS_FULLNAME;
+import static com.xscoder.askk.XServerSDK.USERS_TABLE_NAME;
+import static com.xscoder.askk.XServerSDK.XSCurrentUser;
+import static com.xscoder.askk.XServerSDK.XSGetArrayFromJSONArray;
 import static com.xscoder.askk.XServerSDK.XSGetPointer;
 import static com.xscoder.askk.XServerSDK.XSObject;
 import static com.xscoder.askk.XServerSDK.XSQuery;
@@ -89,6 +95,16 @@ public class Home extends AppCompatActivity {
                             public void done(String e, JSON obj) {
                                 if (e == null) { Log.i(TAG, "DEVICE TOKEN REGISTERED");
                         }}});
+                }});
+            } //./ If
+
+            if (mustReload){
+                mustReload = false;
+                queryQuestions();
+            }
+        }}); // ./ XSCurrentUser
+
+
 
         // Check Permissions
         if (!checkPermissions()) { checkPermissions(); }
