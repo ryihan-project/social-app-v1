@@ -48,3 +48,4 @@ import static com.xscoder.askk.XServerSDK.XSObject;
 import static com.xscoder.askk.XServerSDK.XSQuery;
 import static com.xscoder.askk.XServerSDK.XSRemoveDuplicatesFromArray;
 import static com.xscoder.askk.XServerSDK.categoriesArray;
+public class Home extends AppCompatActivity {
