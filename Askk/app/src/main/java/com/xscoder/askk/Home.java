@@ -49,4 +49,15 @@ import static com.xscoder.askk.XServerSDK.XSQuery;
 import static com.xscoder.askk.XServerSDK.XSRemoveDuplicatesFromArray;
 import static com.xscoder.askk.XServerSDK.categoriesArray;
 public class Home extends AppCompatActivity {
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
+        if (requestCode == MULTIPLE_PERMISSIONS) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Log.i(TAG, "ALL PERMISSIONS GRANTED!");
+            }
+        }
+    }
+
+
+
 } // ./ end
