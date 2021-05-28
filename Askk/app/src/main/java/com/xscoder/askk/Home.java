@@ -61,6 +61,26 @@ public class Home extends AppCompatActivity {
         questionsListView = findViewById(R.id.hQuestionsListView);
         postQuestionButton = findViewById(R.id.hPostQuestionButton);
 
+        //-----------------------------------------------
+        // MARK - SEARCH BY KEYWORDS
+        //-----------------------------------------------
+        searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+
+                    // Call query
+                    if (!searchEditText.getText().toString().matches("")) {
+                        searchTxt = searchEditText.getText().toString();
+                        queryQuestions();
+                        dismissKeyboard();
+                    } else { simpleAlert("Please type something.", ctx); }
+
+                    return true;
+                } return false;
+        }});
+
+
         // Default Category
         categoryTxt.setText(categoriesArray[0].toUpperCase());
 
