@@ -70,6 +70,15 @@ public class Home extends AppCompatActivity {
 
 
 
+        // Get Current User
+        XSCurrentUser((Activity)ctx, new XServerSDK.XSCurrentUserHandler() { @Override public void done(final JSON currUser) {
+            // Current User IS LOGGED IN!
+            if (currUser != null) { currentUser = currUser; }
+
+            // Call query
+            queryQuestions();
+        }}); // ./ XSCurrentUser
+
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
