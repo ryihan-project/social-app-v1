@@ -39,3 +39,7 @@ import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import eu.amirs.JSON;
+import static com.xscoder.askk.XServerSDK.QUESTIONS_CREATED_AT;
+import static com.xscoder.askk.XServerSDK.QUESTIONS_IS_ANONYMOUS;
+import static com.xscoder.askk.XServerSDK.QUESTIONS_QUESTION;
+import static com.xscoder.askk.XServerSDK.QUESTIONS_REPORTED_BY;
