@@ -51,6 +51,16 @@ import static com.xscoder.askk.XServerSDK.XSQuery;
 import static com.xscoder.askk.XServerSDK.XSRemoveDuplicatesFromArray;
 import static com.xscoder.askk.XServerSDK.categoriesArray;
 public class Home extends AppCompatActivity {
+        //-----------------------------------------------
+        // MARK - INITIALIZE VIEWS
+        //-----------------------------------------------
+        searchEditText = findViewById(R.id.hSearchEditText);
+        searchEditText.setTypeface(popRegular);
+        categoryTxt = findViewById(R.id.hCategoryTxt);
+        categoryTxt.setTypeface(popBold);
+        questionsListView = findViewById(R.id.hQuestionsListView);
+        postQuestionButton = findViewById(R.id.hPostQuestionButton);
+
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
