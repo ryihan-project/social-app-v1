@@ -27,6 +27,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 
@@ -51,6 +54,13 @@ import static com.xscoder.askk.XServerSDK.XSQuery;
 import static com.xscoder.askk.XServerSDK.XSRemoveDuplicatesFromArray;
 import static com.xscoder.askk.XServerSDK.categoriesArray;
 public class Home extends AppCompatActivity {
+    // VARIABLES //
+    Context ctx = this;
+    JSON currentUser;
+    List<JSON>questionsArray = new ArrayList<>();
+    String selectedCategory = categoriesArray[0];
+    String searchTxt = "";
+
         //-----------------------------------------------
         // MARK - INITIALIZE VIEWS
         //-----------------------------------------------
