@@ -49,6 +49,15 @@ import static com.xscoder.askk.XServerSDK.XSQuery;
 import static com.xscoder.askk.XServerSDK.XSRemoveDuplicatesFromArray;
 import static com.xscoder.askk.XServerSDK.categoriesArray;
 public class Home extends AppCompatActivity {
+    //-----------------------------------------------
+    // MARK - DISMISS KEYBOARD
+    //-----------------------------------------------
+    void dismissKeyboard() {
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        assert imm != null;
+        imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
         if (requestCode == MULTIPLE_PERMISSIONS) {
