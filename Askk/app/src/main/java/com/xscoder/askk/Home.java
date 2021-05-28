@@ -43,3 +43,8 @@ import static com.xscoder.askk.XServerSDK.QUESTIONS_CREATED_AT;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_IS_ANONYMOUS;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_QUESTION;
 import static com.xscoder.askk.XServerSDK.QUESTIONS_REPORTED_BY;
+import static com.xscoder.askk.XServerSDK.XSGetPointer;
+import static com.xscoder.askk.XServerSDK.XSObject;
+import static com.xscoder.askk.XServerSDK.XSQuery;
+import static com.xscoder.askk.XServerSDK.XSRemoveDuplicatesFromArray;
+import static com.xscoder.askk.XServerSDK.categoriesArray;
