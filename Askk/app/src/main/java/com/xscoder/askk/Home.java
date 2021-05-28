@@ -67,6 +67,26 @@ public class Home extends AppCompatActivity {
         //-----------------------------------------------
         Button tab1 = findViewById(R.id.tab2);
         Button tab2 = findViewById(R.id.tab3);
+
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ctx, NotificationsScreen.class));
+        }});
+
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ctx, Account.class);
+                Bundle extras = new Bundle();
+                extras.putBoolean("isCurrentUser", true);
+                extras.putBoolean("showBackButton", false);
+                i.putExtras(extras);
+                startActivity(i);
+        }});
+
+
+
         //-----------------------------------------------
         // MARK - SEARCH BY KEYWORDS
         //-----------------------------------------------
