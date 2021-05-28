@@ -64,6 +64,12 @@ public class Home extends AppCompatActivity {
         // Default Category
         categoryTxt.setText(categoriesArray[0].toUpperCase());
 
+
+        // Call function
+        setupCategoriesScrollView();
+
+
+
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
