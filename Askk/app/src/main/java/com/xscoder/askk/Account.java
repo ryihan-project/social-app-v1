@@ -141,6 +141,29 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
    }
 
       //-----------------------------------------------
+      // MARK - INITIALIZE VIEWS
+      //-----------------------------------------------
+      backButton = findViewById(R.id.accBackButton);
+      questionsButton = findViewById(R.id.accQuestionsButton);
+      questionsButton.setTypeface(popBold);
+      answersButton = findViewById(R.id.accAnswersButton);
+      answersButton.setTypeface(popBold);
+      editProfileButton = findViewById(R.id.accEditProfileButton);
+      reportUserButton = findViewById(R.id.accReportButton);
+      avatarImg = findViewById(R.id.accAvatarImg);
+      fullnameTxt = findViewById(R.id.accFullnameTxt);
+      fullnameTxt.setTypeface(popBold);
+      usernameTxt = findViewById(R.id.accusernameTxt);
+      usernameTxt.setTypeface(popRegular);
+      locationTxt = findViewById(R.id.accLocationTxt);
+      locationTxt.setTypeface(popRegular);
+      educationTxt = findViewById(R.id.accEducationTxt);
+      educationTxt.setTypeface(popRegular);
+      logoutButton = findViewById(R.id.accLogoutButton);
+      QAListView = findViewById(R.id.accQAListView);
+      tabBar = findViewById(R.id.tabBar);
+
+      //-----------------------------------------------
       // MARK - TAP CELL -> SEE QUESTIONS OR ANSWERS
       //-----------------------------------------------
       QAListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
