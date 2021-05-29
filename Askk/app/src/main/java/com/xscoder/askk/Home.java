@@ -370,6 +370,19 @@ public class Home extends AppCompatActivity {
                      // error
                      } else { simpleAlert(e, ctx);
                }}}); // ./ XSGetPointer
+
+
+           return cell;
+           @Override public Object getItem(int position) { return questionsArray.get(position); }
+           @Override public long getItemId(int position) { return position; }
+        }
+
+        // Set Adapter
+        questionsListView.setAdapter(new ListAdapter(ctx));
+
+
+        //-----------------------------------------------
+        // MARK - SELECT QUESTION
               startActivity(i);
         }});
     }
