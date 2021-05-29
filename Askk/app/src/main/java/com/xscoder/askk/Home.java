@@ -259,6 +259,31 @@ public class Home extends AppCompatActivity {
                           .setColorTitleCancel(Color.parseColor("#333333"))
                           .setColorData(Color.parseColor(MAIN_COLOR))
                           .create(new ActionSheetCallBack() {
+                              @Override
+                              public void data(@NotNull String data, int position) {
+                                  switch (position){
+
+                                      // Ask with name
+                                      case 0:
+                                          extras.putBoolean("isAnonymous", false);
+                                          extras.putBoolean("isQuestion", true);
+                                          i.putExtras(extras);
+                                          startActivity(i);
+                                          break;
+
+                                      // Ask anonymously
+                                      case 1:
+                                          extras.putBoolean("isAnonymous", true);
+                                          extras.putBoolean("isQuestion", true);
+                                          i.putExtras(extras);
+                                          startActivity(i);
+                                          break;
+                                  }}});
+
+
+                }// ./ If
+        }});
+
     // ------------------------------------------------
     // MARK: - SETUP CATEGORIES SCROLLVIEW
     // ------------------------------------------------
