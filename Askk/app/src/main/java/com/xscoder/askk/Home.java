@@ -76,6 +76,16 @@ import static com.xscoder.askk.XServerSDK.XSObject;
 import static com.xscoder.askk.XServerSDK.XSQuery;
 import static com.xscoder.askk.XServerSDK.XSRemoveDuplicatesFromArray;
 import static com.xscoder.askk.XServerSDK.categoriesArray;
+import static com.xscoder.askk.XServerSDK.colorsArray;
+import static com.xscoder.askk.XServerSDK.hideHUD;
+import static com.xscoder.askk.XServerSDK.mustReload;
+import static com.xscoder.askk.XServerSDK.permissions;
+import static com.xscoder.askk.XServerSDK.popBold;
+import static com.xscoder.askk.XServerSDK.popRegular;
+import static com.xscoder.askk.XServerSDK.roundLargeNumber;
+import static com.xscoder.askk.XServerSDK.showHUD;
+import static com.xscoder.askk.XServerSDK.simpleAlert;
+
 public class Home extends AppCompatActivity {
     // VARIABLES //
     Context ctx = this;
