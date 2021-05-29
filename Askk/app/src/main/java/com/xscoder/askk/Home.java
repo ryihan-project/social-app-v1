@@ -284,6 +284,14 @@ public class Home extends AppCompatActivity {
                 }// ./ If
         }});
 
+
+
+    }// ./ onCreate
+
+
+
+
+
     // ------------------------------------------------
     // MARK: - SETUP CATEGORIES SCROLLVIEW
     // ------------------------------------------------
