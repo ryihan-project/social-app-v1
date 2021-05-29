@@ -355,6 +355,21 @@ public class Home extends AppCompatActivity {
                final TextView questionTxt = cell.findViewById(R.id.ccatQuestionTxt);
                questionTxt.setTypeface(popBold);
                final TextView answeredByTxt = cell.findViewById(R.id.ccatAnsweredByTxt);
+
+                           // Question
+                           questionTxt.setText(qObj.key(QUESTIONS_QUESTION).stringValue());
+
+                           // Answers & Views
+                           int answers = qObj.key(QUESTIONS_ANSWERS).intValue();
+                           int views = qObj.key(QUESTIONS_VIEWS).intValue();
+                           String answersStr;
+                           if (answers == 0) { answersStr = "No answer yet • ";
+                           } else { answersStr = roundLargeNumber(answers) + " answers • ";  }
+                           answeredByTxt.setText(answersStr + roundLargeNumber(views) + " views");
+
+                     // error
+                     } else { simpleAlert(e, ctx);
+               }}}); // ./ XSGetPointer
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
