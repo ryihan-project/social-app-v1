@@ -370,6 +370,15 @@ public class Home extends AppCompatActivity {
                      // error
                      } else { simpleAlert(e, ctx);
                }}}); // ./ XSGetPointer
+              startActivity(i);
+        }});
+    }
+
+
+
+
+
+
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
