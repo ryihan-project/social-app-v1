@@ -289,6 +289,23 @@ public class Home extends AppCompatActivity {
 
             // Add containerView to the layout
             layout.addView(containerView);
+            limit = 1000000;
+        }
+
+        // Search
+        if (!searchTxt.matches("")){
+            selectedCategory = "";
+            colName = QUESTIONS_CREATED_AT;
+            limit = 1000000;
+        }
+
+        // Launch query
+        final int finalLimit = limit;
+        XSQuery((Activity)ctx, QUESTIONS_TABLE_NAME, colName, "descending", new XServerSDK.XSQueryHandler() {
+           @SuppressLint("SetTextI18n")
+           @Override public void done(JSON objects, String error) {
+              if (error == null) {
+                 for (int i = 0; i < objects.count(); i++) {
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
