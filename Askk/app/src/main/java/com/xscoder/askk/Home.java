@@ -275,6 +275,20 @@ public class Home extends AppCompatActivity {
                           selectedCategory.matches(categoriesArray[2]) ){
                         categoryTxt.setTextColor(Color.BLACK);
                     } else { categoryTxt.setTextColor(Color.parseColor(colorsArray[finalI])); }
+            lp3.addRule(RelativeLayout.CENTER_HORIZONTAL);
+            lp3.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+            aTxt.setLayoutParams(lp3);
+
+            aTxt.setTextColor(Color.parseColor(colorsArray[i]));
+            aTxt.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            aTxt.setTextSize(10);
+            aTxt.setTypeface(popRegular);
+            aTxt.setText(categoriesArray[i].toUpperCase());
+            containerView.addView(aTxt);
+
+
+            // Add containerView to the layout
+            layout.addView(containerView);
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
