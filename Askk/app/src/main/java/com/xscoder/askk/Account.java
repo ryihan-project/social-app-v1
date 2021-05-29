@@ -69,6 +69,9 @@ import static com.xscoder.askk.XServerSDK.USERS_TABLE_NAME;
 import static com.xscoder.askk.XServerSDK.popBold;
 import static com.xscoder.askk.XServerSDK.popRegular;
 import static com.xscoder.askk.XServerSDK.roundLargeNumber;
+import static com.xscoder.askk.XServerSDK.showHUD;
+import static com.xscoder.askk.XServerSDK.simpleAlert;
+
 public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
       //-----------------------------------------------
       // MARK - TAP CELL -> SEE QUESTIONS OR ANSWERS
