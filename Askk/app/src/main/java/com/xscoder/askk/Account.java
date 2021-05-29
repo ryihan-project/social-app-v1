@@ -73,6 +73,32 @@ import static com.xscoder.askk.XServerSDK.showHUD;
 import static com.xscoder.askk.XServerSDK.simpleAlert;
 
 public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+
+   // VIEWS //
+   Button backButton, questionsButton, answersButton, editProfileButton, reportUserButton, logoutButton;
+   CircleImageView avatarImg;
+   TextView fullnameTxt, usernameTxt, locationTxt, educationTxt;
+   ListView QAListView;
+   SwipeRefreshLayout refreshControl;
+   RelativeLayout tabBar;
+
+
+   // VARIABLES //
+   Context ctx = this;
+   JSON currentUser;
+   boolean isCurrentUser = true;
+   boolean showBackbutton = false;
+   boolean isQuestions = true;
+   JSON userObj;
+   List<JSON>QAArray = new ArrayList<>();
+
+
+
+
+
+   //-----------------------------------------------
+   // MARK - ON START
+   //-----------------------------------------------
    @Override
    protected void onStart() {
       super.onStart();
