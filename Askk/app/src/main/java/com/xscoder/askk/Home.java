@@ -237,6 +237,26 @@ public class Home extends AppCompatActivity {
         //-----------------------------------------------
         // MARK - POST QUESTION BUTTON
         //-----------------------------------------------
+
+                // USER IS NOT LOGGED IN...
+                if (currentUser == null) {
+                    startActivity(new Intent(ctx, Intro.class));
+
+                // USER IS LOGGED IN!
+                } else {
+                    final Intent i = new Intent(ctx, PostScreen.class);
+                    final Bundle extras = new Bundle();
+
+
+                    List<String>buttons = new ArrayList<>();
+                    buttons.add("Ask with name");
+                    buttons.add("Ask anonymously");
+                    new ActionSheet(ctx, buttons)
+                          .setTitle("How do you want to ask a question?")
+                          .setCancelTitle("Cancel")
+                          .setColorTitle(Color.parseColor(GRAY))
+                          .setColorTitleCancel(Color.parseColor("#333333"))
+                          .setColorData(Color.parseColor(MAIN_COLOR))
     // ------------------------------------------------
     // MARK: - SETUP CATEGORIES SCROLLVIEW
     // ------------------------------------------------
