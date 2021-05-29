@@ -237,6 +237,18 @@ public class Home extends AppCompatActivity {
         //-----------------------------------------------
         // MARK - POST QUESTION BUTTON
         //-----------------------------------------------
+    // ------------------------------------------------
+    // MARK: - SETUP CATEGORIES SCROLLVIEW
+    // ------------------------------------------------
+    void setupCategoriesScrollView() {
+
+        for (int i=0; i<categoriesArray.length; i++) {
+            LinearLayout layout = findViewById(R.id.hCategoriesLayout);
+            layout.setOrientation(LinearLayout.HORIZONTAL);
+            final int finalI = i;
+
+            // Size values
+            int W = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 80, getResources().getDisplayMetrics());
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
