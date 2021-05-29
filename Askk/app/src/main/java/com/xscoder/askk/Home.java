@@ -237,6 +237,7 @@ public class Home extends AppCompatActivity {
         //-----------------------------------------------
         // MARK - POST QUESTION BUTTON
         //-----------------------------------------------
+            public void onClick(View v) {
 
                 // USER IS NOT LOGGED IN...
                 if (currentUser == null) {
@@ -257,6 +258,7 @@ public class Home extends AppCompatActivity {
                           .setColorTitle(Color.parseColor(GRAY))
                           .setColorTitleCancel(Color.parseColor("#333333"))
                           .setColorData(Color.parseColor(MAIN_COLOR))
+                          .create(new ActionSheetCallBack() {
     // ------------------------------------------------
     // MARK: - SETUP CATEGORIES SCROLLVIEW
     // ------------------------------------------------
