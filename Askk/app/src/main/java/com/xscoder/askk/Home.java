@@ -262,6 +262,19 @@ public class Home extends AppCompatActivity {
             aButt.setImageResource(imgID);
             aButt.setClipToOutline(true);
             containerView.addView(aButt);
+            // MARK - CATEGORY BUTTON
+            //-----------------------------------------------
+            aButt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    categoryTxt.setText(categoriesArray[finalI].toUpperCase());
+                    selectedCategory = categoriesArray[finalI];
+
+                    if (selectedCategory.matches(categoriesArray[0]) ||
+                          selectedCategory.matches(categoriesArray[1]) ||
+                          selectedCategory.matches(categoriesArray[2]) ){
+                        categoryTxt.setTextColor(Color.BLACK);
+                    } else { categoryTxt.setTextColor(Color.parseColor(colorsArray[finalI])); }
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
