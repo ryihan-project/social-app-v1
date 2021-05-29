@@ -340,6 +340,21 @@ public class Home extends AppCompatActivity {
                     showDataInListView();
 
                     // NO objects
+
+
+               //-----------------------------------------------
+               // MARK - INITIALIZE VIEWS
+               //-----------------------------------------------
+               final RelativeLayout aCell = cell.findViewById(R.id.ccatCell);
+               final TextView dateTxt = cell.findViewById(R.id.ccatDateTxt);
+               dateTxt.setTypeface(popRegular);
+               final TextView categoryTxt = cell.findViewById(R.id.ccatCategoryTxt);
+               categoryTxt.setTypeface(popRegular);
+               final ImageView categoryImg = cell.findViewById(R.id.ccatCategoryImg);
+               final CircleImageView avatarImg = cell.findViewById(R.id.ccatAvatarImg);
+               final TextView questionTxt = cell.findViewById(R.id.ccatQuestionTxt);
+               questionTxt.setTypeface(popBold);
+               final TextView answeredByTxt = cell.findViewById(R.id.ccatAnsweredByTxt);
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
