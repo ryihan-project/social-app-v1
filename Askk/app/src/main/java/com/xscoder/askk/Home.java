@@ -413,6 +413,27 @@ public class Home extends AppCompatActivity {
         imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
     }
 
+
+
+    //-----------------------------------------------
+    // MARK - CHECK FOR PERMISSIONS
+    //-----------------------------------------------
+    private  boolean checkPermissions() {
+        int result;
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        for (String p : permissions) {
+            result = ContextCompat.checkSelfPermission(this, p);
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                listPermissionsNeeded.add(p);
+            }
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[0]), MULTIPLE_PERMISSIONS );
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
         if (requestCode == MULTIPLE_PERMISSIONS) {
