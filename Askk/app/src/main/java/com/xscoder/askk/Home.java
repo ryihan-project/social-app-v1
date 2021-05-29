@@ -249,6 +249,19 @@ public class Home extends AppCompatActivity {
 
             // Size values
             int W = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 80, getResources().getDisplayMetrics());
+
+            // Category Button (as CircleImageView)
+            CircleImageView aButt = new CircleImageView(ctx);
+            RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(WH44, WH44);
+            lp2.addRule(RelativeLayout.CENTER_HORIZONTAL);
+            lp2.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+            aButt.setLayoutParams(lp2);
+
+            int imgID = getResources().getIdentifier(categoriesArray[i], "drawable", getPackageName());
+            aButt.setBackgroundColor(Color.parseColor(colorsArray[i]));
+            aButt.setImageResource(imgID);
+            aButt.setClipToOutline(true);
+            containerView.addView(aButt);
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
