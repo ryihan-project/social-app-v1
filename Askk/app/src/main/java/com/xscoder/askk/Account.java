@@ -37,6 +37,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -49,8 +50,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import eu.amirs.JSON;
+
+import static com.xscoder.askk.XServerSDK.ANSWERS_ANSWER;
+import static com.xscoder.askk.XServerSDK.ANSWERS_CREATED_AT;
+import static com.xscoder.askk.XServerSDK.ANSWERS_IS_ANONYMOUS;
 import static com.xscoder.askk.XServerSDK.ANSWERS_QUESTION_POINTER;
 import static com.xscoder.askk.XServerSDK.ANSWERS_REPORTED_BY;
 import static com.xscoder.askk.XServerSDK.ANSWERS_TABLE_NAME;
