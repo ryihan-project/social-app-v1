@@ -140,6 +140,23 @@ public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
    }
 
+
+
+
+   //-----------------------------------------------
+   // MARK - ON CREATE
+   //-----------------------------------------------
+   @SuppressLint("SourceLockedOrientationActivity")
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.account);
+      super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+      // Hide ActionBar
+      Objects.requireNonNull(getSupportActionBar()).hide();
+
+
       //-----------------------------------------------
       // MARK - INITIALIZE VIEWS
       //-----------------------------------------------
