@@ -321,6 +321,25 @@ public class Home extends AppCompatActivity {
                                          ){ questionsArray.add(obj); }
                                      } else { questionsArray.add(obj); }
                                  }
+                             } //./ If
+
+                         } //./ If • [Search for keywords]
+
+                     } //./ If limit
+
+
+                     // [Finalize array of objects]
+                    if (i == objects.count()-1) { questionsArray = XSRemoveDuplicatesFromArray(questionsArray); }
+                 } // ./ For
+
+
+                 // There area some objects
+                 if (questionsArray.size() != 0) {
+                    hideHUD();
+                    questionsListView.setVisibility(View.VISIBLE);
+                    showDataInListView();
+
+                    // NO objects
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
