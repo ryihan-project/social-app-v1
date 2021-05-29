@@ -306,6 +306,21 @@ public class Home extends AppCompatActivity {
            @Override public void done(JSON objects, String error) {
               if (error == null) {
                  for (int i = 0; i < objects.count(); i++) {
+                                 if (obj.key(QUESTIONS_ANSWERS).intValue() == 0){
+                                     if (currentUser != null){
+                                         if (!reportedBy.contains(currentUser.key("ID_id").stringValue())
+                                         ){ questionsArray.add(obj); }
+                                     } else { questionsArray.add(obj); }
+                                 }
+
+                                 // Other Categories
+                             } else {
+                                 if (obj.key(QUESTIONS_CATEGORY).stringValue().matches(selectedCategory)){
+                                     if (currentUser != null){
+                                         if (!reportedBy.contains(currentUser.key("ID_id").stringValue())
+                                         ){ questionsArray.add(obj); }
+                                     } else { questionsArray.add(obj); }
+                                 }
     //-----------------------------------------------
     // MARK - DISMISS KEYBOARD
     //-----------------------------------------------
