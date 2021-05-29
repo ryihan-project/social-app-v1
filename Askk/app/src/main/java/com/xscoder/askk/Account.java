@@ -73,6 +73,35 @@ import static com.xscoder.askk.XServerSDK.showHUD;
 import static com.xscoder.askk.XServerSDK.simpleAlert;
 
 public class Account extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+   @Override
+   protected void onStart() {
+      super.onStart();
+
+      // Get Current User
+      XSCurrentUser((Activity)ctx, new XServerSDK.XSCurrentUserHandler() { @Override public void done(final JSON currUser) {
+         // Current User IS LOGGED IN!
+         if (currUser != null) {
+            currentUser = currUser;
+
+            // Call function
+            if (isCurrentUser) { showUserDetails(currentUser);
+            } else { showUserDetails(userObj); }
+
+            Log.i(TAG, "MY_VARIABLE: " + isCurrentUser);
+
+            if (mustReload){
+               mustReload = false;
+
+               // Call query
+               callQuery();
+            }
+
+         // Current User IS LOGGED OUT
+         } else { startActivity(new Intent(ctx, Intro.class)); }
+      }}); // ./ XSCurrentUser
+
+   }
+
       //-----------------------------------------------
       // MARK - TAP CELL -> SEE QUESTIONS OR ANSWERS
       //-----------------------------------------------
