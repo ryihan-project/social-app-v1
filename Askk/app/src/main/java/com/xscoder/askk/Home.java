@@ -373,6 +373,8 @@ public class Home extends AppCompatActivity {
 
 
            return cell;
+           }
+           @Override public int getCount() { return questionsArray.size(); }
            @Override public Object getItem(int position) { return questionsArray.get(position); }
            @Override public long getItemId(int position) { return position; }
         }
@@ -383,6 +385,16 @@ public class Home extends AppCompatActivity {
 
         //-----------------------------------------------
         // MARK - SELECT QUESTION
+        //-----------------------------------------------
+        questionsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+              // Obj
+              JSON qObj = questionsArray.get(position);
+
+              Intent i = new Intent(ctx, QuestionScreen.class);
+              Bundle extras = new Bundle();
+              extras.putString("object", String.valueOf(qObj));
+              i.putExtras(extras);
               startActivity(i);
         }});
     }
